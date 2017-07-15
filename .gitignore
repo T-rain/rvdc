@@ -1,2 +1,4 @@
-RateLimiter/*
+RateLimiter/.DS_Store
+RateLimiter/.git/*
+RateLimiter/.gitignore
 .DS_Store
