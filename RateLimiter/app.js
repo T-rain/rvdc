@@ -60,14 +60,12 @@ app.use(async function(req,res,next){
 
         const loginIPlist = await getIP();
         const ipArray =  Object.values(loginIPlist);
-        const nowTS = (Math.floor(Date.now() / 1000))
-<<<<<<< HEAD
-        const maxReqTimes = 1000;
-        const limitTimeStamp = 3600;
-=======
+        const nowTS = (Math.floor(Date.now() / 1000));
+        // const maxReqTimes = 1000;
+        // const limitTimeStamp = 3600;
         const maxReqTimes = 3;
         const limitTimeStamp = 15;
->>>>>>> 7f26bf96d8cf0a3730892a9d6738fc0b2f4e233d
+
 
         let wantIPArray = ipArray.filter(ele=>ele.ip == reqip)
                                  .filter(ele=>ele.create_at>(nowTS-limitTimeStamp));
