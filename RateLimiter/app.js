@@ -25,14 +25,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
+//follow is config database(can be public)
 var config = {
-   apiKey: "AIzaSyDPYslRF9g8Vs5cnby72-cOHLyiosnqXNc",
-   authDomain: "t-rain.firebaseapp.com",
-   databaseURL: "https://t-rain.firebaseio.com",
-   projectId: "t-rain",
-   storageBucket: "t-rain.appspot.com",
-   messagingSenderId: "474369892311"
+    apiKey: "AIzaSyDPYslRF9g8Vs5cnby72-cOHLyiosnqXNc",
+    authDomain: "t-rain.firebaseapp.com",
+    databaseURL: "https://t-rain.firebaseio.com",
+    projectId: "t-rain",
+    storageBucket: "t-rain.appspot.com",
+    messagingSenderId: "474369892311"
 };
 firebase.initializeApp(config);
 
@@ -61,8 +61,13 @@ app.use(async function(req,res,next){
         const loginIPlist = await getIP();
         const ipArray =  Object.values(loginIPlist);
         const nowTS = (Math.floor(Date.now() / 1000))
+<<<<<<< HEAD
         const maxReqTimes = 1000;
         const limitTimeStamp = 3600;
+=======
+        const maxReqTimes = 3;
+        const limitTimeStamp = 15;
+>>>>>>> 7f26bf96d8cf0a3730892a9d6738fc0b2f4e233d
 
         let wantIPArray = ipArray.filter(ele=>ele.ip == reqip)
                                  .filter(ele=>ele.create_at>(nowTS-limitTimeStamp));

@@ -1,3 +1,2 @@
-RateLimiter/node_modules/*
-RateLimiter/npm-debug.log
+RateLimiter/*
 .DS_Store
